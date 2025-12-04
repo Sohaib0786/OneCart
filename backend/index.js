@@ -35,6 +35,6 @@ app.get("/" , (req,res) => {
    })
 
 app.listen(port, () => {
-    console.log("Hello from Server");
+    console.log("Hello from Server" );
     connectDb();
 })
