@@ -6,7 +6,7 @@ import { IoEyeOutline, IoEye } from "react-icons/io5";
 import Logo from "../assets/logo.png";
 import google from "../assets/google.png";
 import { auth, provider } from "../../utils/Firebase";
-import { authDataContext } from "../context/authContext";
+import { authDataContext } from "../context/AuthContext";
 import { userDataContext } from "../context/UserContext";
 import Loading from "../component/Loading";
 import { toast } from "react-toastify";
