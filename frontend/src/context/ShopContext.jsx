@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-import { authDataContext } from "./authContext";
+import { authDataContext } from "./AuthContext";
 import { userDataContext } from "./UserContext";
 
 export const shopDataContext = createContext();
@@ -73,6 +73,7 @@ function ShopContext({ children }) {
   // Fetch User Cart
   // ----------------------------
   const getUserCart = async () => {
+
     try {
       const result = await axios.post(
         `${serverUrl}/api/cart/get`,
@@ -84,6 +85,7 @@ function ShopContext({ children }) {
       console.log(error);
     }
   };
+
 
   // ----------------------------
   // Update Quantity

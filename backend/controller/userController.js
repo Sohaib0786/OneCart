@@ -23,6 +23,7 @@ export const getCurrentUser = async (req, res) => {
 // Get Admin info
 export const getAdmin = async (req, res) => {
   try {
+    
     if (!req.adminEmail) {
       return res.status(401).json({ message: "Unauthorized: Admin email missing" });
     }
