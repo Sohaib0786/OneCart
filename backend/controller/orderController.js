@@ -13,6 +13,7 @@ const razorpayInstance = new razorpay({
 });
 
 
+
 // for User
 export const placeOrder = async (req,res) => {
 
@@ -37,6 +38,7 @@ export const placeOrder = async (req,res) => {
          await User.findByIdAndUpdate(userId,{cartData:{}});
 
          return res.status(201).json({message:'Order Place'});
+
 
     } catch (error) {
         console.log(error);
@@ -115,13 +117,14 @@ export const verifyRazorpay = async (req,res) =>{
 
 
 export const userOrders = async (req,res) => {
-      try {
+      
+    try {
         const userId = req.userId;
         const orders = await Order.find({userId});
         return res.status(200).json(orders);
     } catch (error) {
-        console.log(error)
-        return res.status(500).json({message:"userOrders error"})
+        console.log(error);
+        return res.status(500).json({message:"userOrders error"});
     }
     
 }

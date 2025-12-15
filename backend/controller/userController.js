@@ -2,9 +2,12 @@ import User from "../model/userModel.js";
 
 // Get currently logged-in user
 export const getCurrentUser = async (req, res) => {
+  
   try {
     if (!req.userId) {
-      return res.status(401).json({ message: "Unauthorized: User ID missing" });
+      return res
+             .status(401)
+             .json({ message: "Unauthorized: User ID missing" });
     }
 
     const user = await User.findById(req.userId).select("-password");
